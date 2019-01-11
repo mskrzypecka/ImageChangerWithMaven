@@ -100,17 +100,22 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
     private void jButton1ActionPerformed(ActionEvent evt) {
         FileLoader loader = new FileLoader(this);
         file = loader.OpenDialog();
-        image = loader.GetFileAsImage();
 
-        jLabel1.setText("");
-        int labelWidth = jLabel1.getWidth();
-        int labelHeight = jLabel1.getHeight();
-        Image imageTemp = image.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-        ImageIcon imageIcon = new ImageIcon(imageTemp);
+        try {
+            image = loader.GetFileAsImage(file);
 
-        jLabel1.setIcon(imageIcon);
-        jButtonFilter.setEnabled(true);
-        jProgressBar1.setValue(0);
+            jLabel1.setText("");
+            int labelWidth = jLabel1.getWidth();
+            int labelHeight = jLabel1.getHeight();
+            Image imageTemp = image.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(imageTemp);
+
+            jLabel1.setIcon(imageIcon);
+            jButtonFilter.setEnabled(true);
+            jProgressBar1.setValue(0);
+        } catch(Exception ex) {
+            System.out.println("Brak pliku lub plik w złym formacie: " + ex.getMessage());
+        }
     }
 
     private void jLabel1ComponentResized(java.awt.event.ComponentEvent evt) {
