@@ -37,13 +37,9 @@ public class ChangePixels implements Callable<Integer> {
         int r = (color >> 16) & 0xff;
         int g = (color >> 8) & 0xff;
         int b = color & 0xff;
-        //subtract RGB from 255
         r = 255 - r;
         g = 255 - g;
         b = 255 - b;
-        //set new RGB value
-        color = (a << 24) | (r << 16) | (g << 8) | b;
-
-        return color;
+        return  (a << 24) | (r << 16) | (g << 8) | b;
     }
 }
