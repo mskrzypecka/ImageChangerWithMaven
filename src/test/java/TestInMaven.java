@@ -259,8 +259,6 @@ public class TestInMaven {
         Assert.assertEquals(newColor, result);
     }
 
-    //TODO: 18
-
     @Test
     public void ShouldBeEqual16656003When121212(){
         // arrange
