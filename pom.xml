@@ -19,10 +19,24 @@
             </plugin>
         </plugins>
     </build>
-
     <properties>
-            <maven.compiler.source>1.8</maven.compiler.source>
-            <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- TestInMaven tools -->
+        <junit.version>4.12</junit.version>
+        <mockito.version>1.8.5</mockito.version>
+        <joda-time.version>2.9.9</joda-time.version>
+        <jsoup.version>1.11.2</jsoup.version>
+        <commons-csv.version>1.1</commons-csv.version>
+        <JUnitParams.version>1.0.4</JUnitParams.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
 
 </project>
