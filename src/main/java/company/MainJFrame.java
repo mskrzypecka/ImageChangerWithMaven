@@ -98,26 +98,19 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
     }
 
     private void jButton1ActionPerformed(ActionEvent evt) {
-        JFileChooser fileChooser = new JFileChooser();
-        javax.swing.filechooser.FileNameExtensionFilter filter = new javax.swing.filechooser.FileNameExtensionFilter("Grafika JPG", "jpg");
-        fileChooser.setFileFilter(filter);
+        FileLoader loader = new FileLoader(this);
+        file = loader.OpenDialog();
+        image = loader.GetFileAsImage();
 
-        int returnVal = fileChooser.showOpenDialog(this);
-        if (returnVal == JFileChooser.APPROVE_OPTION)
-        {
-            file = fileChooser.getSelectedFile();
-            Toolkit toolkit = Toolkit.getDefaultToolkit();
-            image = toolkit.getImage(file.toString());
-            jLabel1.setText("");
-            int labelWidth = jLabel1.getWidth();
-            int labelHeight = jLabel1.getHeight();
+        jLabel1.setText("");
+        int labelWidth = jLabel1.getWidth();
+        int labelHeight = jLabel1.getHeight();
+        Image imageTemp = image.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+        ImageIcon imageIcon = new ImageIcon(imageTemp);
 
-            Image imageTemp = image.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-            ImageIcon imageIcon = new ImageIcon(imageTemp);
-            jLabel1.setIcon(imageIcon);
-            jButtonFilter.setEnabled(true);
-            jProgressBar1.setValue(0);
-        }
+        jLabel1.setIcon(imageIcon);
+        jButtonFilter.setEnabled(true);
+        jProgressBar1.setValue(0);
     }
 
     private void jLabel1ComponentResized(java.awt.event.ComponentEvent evt) {

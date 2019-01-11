@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
 
 public class ApplyFilter extends SwingWorker<Integer, Integer> {
     public static final int THREADS_ROOT = 3;
-    public static int THREADS = THREADS_ROOT*THREADS_ROOT;
+    public static final int THREADS = THREADS_ROOT*THREADS_ROOT;
     private int progress;
     private int labelWidth, labelHeight;
     private File imageFile;
@@ -62,7 +62,7 @@ public class ApplyFilter extends SwingWorker<Integer, Integer> {
     }
 
     protected void done() {
-        System.out.println("done function");
+        System.out.println("Koniec obliczen");
         Image imageTemp = this.processedImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
         this.imageContainer.setIcon(new ImageIcon(imageTemp));
         this.progress = 100;

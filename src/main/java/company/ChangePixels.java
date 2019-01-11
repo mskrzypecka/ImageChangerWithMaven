@@ -3,9 +3,12 @@ package company;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Callable;
 
-class ChangePixels implements Callable<Integer> {
+public class ChangePixels implements Callable<Integer> {
     private Coords coords;
     private BufferedImage image;
+
+    public ChangePixels(){
+    }
 
     public ChangePixels(Coords coords, BufferedImage image){
         this.coords = coords;
@@ -14,24 +17,12 @@ class ChangePixels implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        int result = 0;
         System.out.println("Poczatek dla X: " + coords.minX + ", Y: " + coords.minY );
         for (int y = coords.minY; y <= coords.maxY; y++) {
             for (int x = coords.minX; x <= coords.maxX; x++) {
                 try {
-                    int p = image.getRGB(x, y);
-                    int a = (p >> 24) & 0xff;
-                    int r = (p >> 16) & 0xff;
-                    int g = (p >> 8) & 0xff;
-                    int b = p & 0xff;
-                    //subtract RGB from 255
-                    r = 255 - r;
-                    g = 255 - g;
-                    b = 255 - b;
-                    //set new RGB value
-                    p = (a << 24) | (r << 16) | (g << 8) | b;
-                    image.setRGB(x, y, p);
-                } catch(Exception ex) {
+                    image.setRGB(x, y, ChangeColor(image.getRGB(x, y)));
+                } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                     System.out.println("Poza zasiegiem: x:" + x + ", y:" + y);
                 }
@@ -39,5 +30,20 @@ class ChangePixels implements Callable<Integer> {
         }
         System.out.println("Koniec dla X: " + coords.minX + ", Y: " + coords.minY );
         return 1;
+    }
+
+    public static int ChangeColor(int color){
+        int a = (color >> 24) & 0xff;
+        int r = (color >> 16) & 0xff;
+        int g = (color >> 8) & 0xff;
+        int b = color & 0xff;
+        //subtract RGB from 255
+        r = 255 - r;
+        g = 255 - g;
+        b = 255 - b;
+        //set new RGB value
+        color = (a << 24) | (r << 16) | (g << 8) | b;
+
+        return color;
     }
 }
