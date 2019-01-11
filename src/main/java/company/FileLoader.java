@@ -14,6 +14,7 @@ public class FileLoader {
     public FileLoader(MainJFrame frame) {
         this.frame = frame;
         this.fileChooser = new JFileChooser();
+        fileChooser.resetChoosableFileFilters();
         javax.swing.filechooser.FileNameExtensionFilter filter = new javax.swing.filechooser.FileNameExtensionFilter("Grafika JPG", "jpg");
         fileChooser.setFileFilter(filter);
     }
@@ -28,8 +29,14 @@ public class FileLoader {
         return file;
     }
 
-    public Image GetFileAsImage() {
+    public static Image GetFileAsImage(File file) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        return toolkit.getImage(file.toString());
+        Image img = null;
+
+        try {
+            return toolkit.getImage(file.toString());
+        } catch(Exception ex) {
+            return img;
+        }
     }
 }
