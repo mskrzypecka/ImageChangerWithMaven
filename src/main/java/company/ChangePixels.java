@@ -1,6 +1,5 @@
 package company;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Callable;
 
@@ -31,11 +30,13 @@ public class ChangePixels implements Callable<Integer> {
     }
 
     public static int ChangeColor(int color){
-        Color col = new Color(color, true);
-        col = new Color(255 - col.getRed(),
-                255 - col.getGreen(),
-                255 - col.getBlue());
-
-        return  col.getRGB();
+        int a = (color >> 24) & 0xff;
+        int r = (color >> 16) & 0xff;
+        int g = (color >> 8) & 0xff;
+        int b = color & 0xff;
+        r = 255 - r;
+        g = 255 - g;
+        b = 255 - b;
+        return (a << 24) | (r << 16) | (g << 8) | b;
     }
 }
