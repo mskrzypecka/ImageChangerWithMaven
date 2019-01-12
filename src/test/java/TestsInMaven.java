@@ -1,4 +1,4 @@
-import company.FileLoader;
+import company.FileHelper;
 import org.junit.*;
 import company.PixelChanger;
 import java.awt.*;
@@ -11,7 +11,7 @@ public class TestsInMaven {
         File file = null;
 
         // act
-        Image img  = FileLoader.GetFileAsImage(file);
+        Image img  = FileHelper.GetFileAsImage(file);
 
         // assert
         //TODO: assertNull
@@ -24,7 +24,7 @@ public class TestsInMaven {
         File file = new File("hackerman.jpg");
 
         // act
-        Image img = FileLoader.GetFileAsImage(file);
+        Image img = FileHelper.GetFileAsImage(file);
 
         // assert
         //TODO: assertNotNull

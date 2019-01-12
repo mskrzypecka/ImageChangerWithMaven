@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-public class FileLoader {
+public class FileHelper {
     private File file;
     private MainJFrame frame;
     private JFileChooser fileChooser;
 
-    public FileLoader(MainJFrame frame) {
+    public FileHelper(MainJFrame frame) {
         this.frame = frame;
         this.fileChooser = new JFileChooser();
         fileChooser.resetChoosableFileFilters();

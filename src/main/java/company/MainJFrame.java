@@ -96,7 +96,7 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
     }
 
     private void jButton1ActionPerformed(ActionEvent evt) {
-        FileLoader loader = new FileLoader(this);
+        FileHelper loader = new FileHelper(this);
         file = loader.OpenDialog();
 
         try {
