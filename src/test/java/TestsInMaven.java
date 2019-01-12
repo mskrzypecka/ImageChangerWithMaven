@@ -4,7 +4,7 @@ import company.ChangePixels;
 import java.awt.*;
 import java.io.File;
 
-public class TestInMaven {
+public class TestsInMaven {
     @Test
     public void ShouldReturnNullWhenFileIsNull(){
         // arrange
@@ -21,7 +21,7 @@ public class TestInMaven {
     @Test
     public void ShouldReturnImageWhenFileIsJpg() {
         // arrange
-        File file = new File("..//filesForTestReasons//hackerman.jpg");
+        File file = new File("hackerman.jpg");
 
         // act
         Image img = FileLoader.GetFileAsImage(file);
