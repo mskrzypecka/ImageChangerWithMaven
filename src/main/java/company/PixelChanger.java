@@ -3,11 +3,11 @@ package company;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Callable;
 
-public class ChangePixels implements Callable<Integer> {
+public class PixelChanger implements Callable<Integer> {
     private Coords coords;
     private BufferedImage image;
 
-    public ChangePixels(Coords coords, BufferedImage image){
+    public PixelChanger(Coords coords, BufferedImage image){
         this.coords = coords;
         this.image = image;
     }

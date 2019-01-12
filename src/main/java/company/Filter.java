@@ -12,16 +12,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ApplyFilter extends SwingWorker<Integer, Integer> {
-    public static final int THREADS_ROOT = 3;
-    public static final int THREADS = THREADS_ROOT*THREADS_ROOT;
+public class Filter extends SwingWorker<Integer, Integer> {
+    public static final int TASK_ROOT = 3;
+    public static final int TASKS = TASK_ROOT * TASK_ROOT;
     private int progress;
     private int labelWidth, labelHeight;
     private File imageFile;
     private JLabel imageContainer;
     private BufferedImage processedImage;
 
-    public ApplyFilter(File imageFile, JLabel imageContainer, int width, int height) {
+    public Filter(File imageFile, JLabel imageContainer, int width, int height) {
         this.imageFile = imageFile;
         this.imageContainer = imageContainer;
         labelWidth = width;
@@ -35,24 +35,24 @@ public class ApplyFilter extends SwingWorker<Integer, Integer> {
         List<Future<Integer>> resultList;
 
         System.out.println("Wymiar obrazka: x:" + image.getWidth() + ", y:" + image.getHeight());
-        int difX = image.getWidth()/THREADS_ROOT;
-        int difY = image.getHeight()/THREADS_ROOT;
+        int difX = image.getWidth()/ TASK_ROOT;
+        int difY = image.getHeight()/ TASK_ROOT;
 
-        for(int i=0; i<THREADS_ROOT; i++) {
-            for(int j=0; j<THREADS_ROOT; j++) {
+        for(int i = 0; i< TASK_ROOT; i++) {
+            for(int j = 0; j< TASK_ROOT; j++) {
                 Coords coord = new Coords(i * difX, i * difX + difX, j * difY, j * difY + difY);
-                taskList.add(new ChangePixels(coord, image));
+                taskList.add(new PixelChanger(coord, image));
             }
         }
-        resultList = service.invokeAll(taskList);
 
+        resultList = service.invokeAll(taskList);
         int sum = 0;
-        while (THREADS != sum) {
+        while (TASKS != sum) {
             sum = 0;
-            for(Future<Integer> task : resultList){
-                sum += task.isDone() ? 1 : 0;
+            for(Future<Integer> result : resultList){
+                sum += result.isDone() ? 1 : 0;
             }
-            this.progress = sum * (100/THREADS);
+            this.progress = sum * (100/ TASKS);
             this.setProgress(this.progress);
         }
         service.shutdown();

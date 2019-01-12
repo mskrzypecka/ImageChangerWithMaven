@@ -1,6 +1,6 @@
 import company.FileLoader;
 import org.junit.*;
-import company.ChangePixels;
+import company.PixelChanger;
 import java.awt.*;
 import java.io.File;
 
@@ -39,7 +39,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         //TODO: assertEquals
@@ -54,7 +54,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -68,7 +68,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         //TODO: assertFalse
@@ -83,7 +83,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         //TODO: assertTrue
@@ -98,7 +98,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         //TODO: assertEquals
@@ -113,7 +113,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -127,7 +127,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -141,7 +141,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -155,7 +155,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -169,7 +169,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -183,7 +183,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -197,7 +197,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -211,7 +211,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -225,7 +225,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -239,7 +239,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -253,7 +253,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -267,7 +267,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -281,7 +281,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -295,7 +295,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -309,7 +309,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -323,7 +323,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -337,7 +337,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -351,7 +351,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -365,7 +365,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -379,7 +379,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -393,7 +393,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -407,7 +407,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);
@@ -421,7 +421,7 @@ public class TestsInMaven {
         int result;
 
         // act
-        result = ChangePixels.ChangeColor(oldColor);
+        result = PixelChanger.ChangeColor(oldColor);
 
         // assert
         Assert.assertEquals(newColor, result);

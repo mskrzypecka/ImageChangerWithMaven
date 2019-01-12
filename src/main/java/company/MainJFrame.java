@@ -19,7 +19,7 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
     private JButton jButtonFilter;
     private JLabel jLabel1;
     private JProgressBar jProgressBar1;
-    private ApplyFilter task;
+    private Filter filter;
 
     public MainJFrame() {
         initComponents();
@@ -35,12 +35,10 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        int progress = task.getProgress();
+        int progress = filter.getProgress();
         jProgressBar1.setValue(progress);
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jButton1 = new JButton();
@@ -49,7 +47,7 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
         jProgressBar1 = new JProgressBar(0,100);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Małgorzata Skrzypecka");
+        setTitle("ImageChanger");
         setMinimumSize(new Dimension(650, 650));
 
         jButton1.setText("Wczytaj plik");
@@ -92,9 +90,9 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
     private void jButtonFilterActionPerformed(ActionEvent evt) {
         jButtonFilter.setEnabled(false);
 
-        task = new ApplyFilter(file, this.jLabel1, jLabel1.getWidth(), jLabel1.getHeight());
-        task.addPropertyChangeListener(this);
-        task.execute();
+        filter = new Filter(file, this.jLabel1, jLabel1.getWidth(), jLabel1.getHeight());
+        filter.addPropertyChangeListener(this);
+        filter.execute();
     }
 
     private void jButton1ActionPerformed(ActionEvent evt) {
