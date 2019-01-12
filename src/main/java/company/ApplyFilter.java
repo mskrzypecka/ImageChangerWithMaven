@@ -21,10 +21,6 @@ public class ApplyFilter extends SwingWorker<Integer, Integer> {
     private JLabel imageContainer;
     private BufferedImage processedImage;
 
-    public ApplyFilter(File imageFile) {
-        this.imageFile = imageFile;
-    }
-
     public ApplyFilter(File imageFile, JLabel imageContainer, int width, int height) {
         this.imageFile = imageFile;
         this.imageContainer = imageContainer;
