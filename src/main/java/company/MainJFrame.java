@@ -74,7 +74,11 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
         jButtonFilter.setMaximumSize(new Dimension(140, 50));
         jButtonFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                jButtonFilterActionPerformed(evt);
+                try {
+                    jButtonFilterActionPerformed(evt);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         getContentPane().add(jButtonFilter, BorderLayout.EAST);
@@ -87,10 +91,10 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
         pack();
     }
 
-    private void jButtonFilterActionPerformed(ActionEvent evt) {
+    private void jButtonFilterActionPerformed(ActionEvent evt) throws InterruptedException {
         jButtonFilter.setEnabled(false);
-
-        filter = new Filter(file, this.jLabel1, jLabel1.getWidth(), jLabel1.getHeight());
+        //TODO: wybierz ilość wątków
+        filter = new Filter(file, this.jLabel1, jLabel1.getWidth(), jLabel1.getHeight(), 5);
         filter.addPropertyChangeListener(this);
         filter.execute();
     }

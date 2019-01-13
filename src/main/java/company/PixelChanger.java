@@ -14,18 +14,18 @@ public class PixelChanger implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("Poczatek dla X: " + coords.minX + ", Y: " + coords.minY );
+        //System.out.println("Poczatek dla X: " + coords.minX + ", Y: " + coords.minY );
         for (int y = coords.minY; y <= coords.maxY; y++) {
             for (int x = coords.minX; x <= coords.maxX; x++) {
                 try {
                     image.setRGB(x, y, ChangeColor(image.getRGB(x, y)));
                 } catch (Exception ex) {
-                    System.out.println(ex.getMessage());
-                    System.out.println("Poza zasiegiem: x:" + x + ", y:" + y);
+                    //System.out.println(ex.getMessage());
+                    //System.out.println("Poza zasiegiem: x:" + x + ", y:" + y);
                 }
             }
         }
-        System.out.println("Koniec dla X: " + coords.minX + ", Y: " + coords.minY );
+        //System.out.println("Koniec dla X: " + coords.minX + ", Y: " + coords.minY );
         return 1;
     }
 
