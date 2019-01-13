@@ -85,7 +85,7 @@ public class MainJFrame extends JFrame implements PropertyChangeListener {
         getContentPane().add(jProgressBar1, BorderLayout.AFTER_LAST_LINE);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void jButtonFilterActionPerformed(ActionEvent evt) {
         jButtonFilter.setEnabled(false);
