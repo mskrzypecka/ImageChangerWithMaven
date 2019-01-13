@@ -29,12 +29,11 @@ public class FileHelper {
 
     public static Image GetFileAsImage(File file) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image img = null;
 
         try {
             return toolkit.getImage(file.toString());
         } catch(Exception ex) {
-            return img;
+            return null;
         }
     }
 }
